@@ -1,6 +1,6 @@
 // $(function () {
 window.onload=function(){
-
+    $('.chat').hide();
     var videoALL = document.getElementById('videoALL'),
         videobox = document.getElementById('videobox'),
         btn = document.getElementById('btn'),
