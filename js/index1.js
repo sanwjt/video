@@ -47,8 +47,10 @@ window.onload=function(){
         },1000)
         $('.ringPage3').show();
 
-        $('.chat').show();
-        $('.keyborde').addClass('fadeInUp').css({"opacity":1})
+        $('.chat').show().css({"opacity":1,"visibility":visible});
+        $('.keyborde').show().css({"opacity":1,"visibility":visible});
+
+        $('.keyborde').addClass('fadeInUp');
     });
 
 
