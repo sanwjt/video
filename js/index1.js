@@ -56,48 +56,7 @@ window.onload=function(){
       })
 
     // });
-    videoALL.addEventListener("ended",function(){
-        videoALL.pause();
-        // videobox.style.display = "none";
-        // videoend.style.display = "block";
-        var html = '<img alt="" src="images/chatbg.jpg" class="chatbg">\n' +
-            '          <div class="keyborde animated fadeInUp">\n' +
-            '              <!-- <img class="comImg hot-foot" src="images/bg3-2.png" alt=""> -->\n' +
-            '              <div class="voice_bar animated">点击下方按钮进行选择</div>\n' +
-            '              <ul class="year-box">\n' +
-            '                  <li>第一个</li>\n' +
-            '                  <li>第二个</li>\n' +
-            '                  <li>第三个</li>\n' +
-            '                  <li>第四个</li>\n' +
-            '                  <li>第五个</li>\n' +
-            '                  <li>第六个</li>\n' +
-            '                  <li>第七个</li>\n' +
-            '                  <li>第八个</li>\n' +
-            '                  <li>第九个</li>\n' +
-            '              </ul>\n' +
-            '              <a href="javascript:;" class="sent-btn">发送</a>\n' +
-            '          </div>';
 
-        setTimeout(function () {
-            $('.voice_bar').addClass('flash');
-            var selectIndex = '';
-            $('.year-box li').click(function () {
-                selectIndex = $(this).index();
-                var html = $(this).html();
-                // $(this).addClass('active');
-                $('.voice_bar').html(html).css({"color":"#000"});
-                $('.sent-btn').addClass('active');
-            })
-
-            $('.sent-btn').click(function () {
-                window.location.href="share.html?select="+selectIndex;
-            })
-        },1000)
-        $('.ringPage3').show();
-        $('.chat').append(html)
-        $('.chat').show();
-        // $('.keyborde').addClass('fadeInUp').css({"opacity":1})
-    });
 
 
     //首页铃声
@@ -194,7 +153,18 @@ window.onload=function(){
       //     $('.keyborde').addClass('fadeInUp').css({"opacity":1})
       // };
 
+    var selectIndex = '';
+    $('.year-box li').click(function () {
+        selectIndex = $(this).index();
+        var html = $(this).html();
+        // $(this).addClass('active');
+        $('.voice_bar').html(html).css({"color":"#000"});
+        $('.sent-btn').addClass('active');
+    })
 
+    $('.sent-btn').click(function () {
+        window.location.href="share.html?select="+selectIndex;
+    })
 
 
     // })
