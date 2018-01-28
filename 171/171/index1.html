@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>年会</title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+	
+  <div class="wrapper">
+       <!--声音-->
+    <div style="display: none">
+       <!-- 来电声音 -->
+       <audio class="openring" autoplay="autoplay" id="musicid">
+           <source src="images/ring_call.mp3" type="audio/mpeg">
+       </audio>
+       <!-- 消息推送的声音 -->
+       <audio  preload="preload" id="audio2">
+           <source src="images/message2.mp3" type="audio/mpeg">
+       </audio>
+       <!--解锁的声音-->
+       <audio  preload="preload" id="audio3">
+           <source src="images/solution_screen.mp3" type="audio/mpeg">
+       </audio>
+       <!--热聊的声音-->
+       <audio  preload="preload" id="audio4">
+           <source src="images/message1.mp3" type="audio/mpeg">
+       </audio>
+   </div>
+    <!-- 视频 -->
+   <div class="videBox">
+      <video class="video-box" id="media" poster="http://jkera.oss-cn-shanghai.aliyuncs.com/dianshiguo/image/kaishi1.jpg" src="
+http://jkera.oss-cn-shanghai.aliyuncs.com/dianshiguo/mp4/shipin8.mp4" x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true" style="object-fit:fill;width: 100%;height: 100%;" preload="auto"></video>
+   </div>
+   
+    <!-- 来电页面 -->
+    <div class="ring_call ringPage1" style="display: block;">
+        <img src="images/bg1.jpg" alt="" class="bg1">
+    </div>
+
+    <!-- 锁屏页   -->
+    <div class="ring_call message_delay ringPage2" style="display: none;">
+      <img src="images/bg2.png" alt="" class="bg">
+        <!--时间-->
+        <div class="time">
+              <p class="clock">
+                     <span class="hours">20</span><span class="timecen">:</span><span class="minutes">18</span>
+              </p>
+              <div>
+                  <p class="monthweekDay">
+                      <span class="monthDay">2月2日</span>
+                      <span class="weekDay">星期五</span>
+                  </p>
+              </div>
+        </div>
+        <!--小鹿在吗-->
+        <img class="bg21" src="images/bg2-1.png" alt="">
+        <!-- 消息推送的声音 -->
+        <audio  preload="preload" id="audio2">
+            <source src="images/message2.mp3">
+        </audio>
+        <p class="nextPage">点击屏幕查看信息</p>
+    </div>
+
+      
+    <!-- 热聊信息页 -->
+
+        <!--选择框-->
+        <div class="keyborde" style="display: none">
+            <!-- <img class="comImg hot-foot" src="images/bg3-2.png" alt=""> -->
+            <div class="voice_bar" style="color:#78a524">点击下方按钮进行选择</div>
+            <ul class="year-box">
+                <li>第一个</li>
+                <li>第二个</li>
+                <li>第三个</li>
+                <li>第四个</li>
+                <li>第五个</li>
+                <li>第六个</li>
+                <li>第七个</li>
+                <li>第八个</li>
+                <li>第九个</li>
+            </ul>
+            <a href="javascript:;" class="sent-btn">发送</a>
+            <!-- <img src="images/bg3-3.png" alt=""> -->
+        </div>
+
+
+  </div>
+  
+  <script src="js/jquery-3.2.1.min.js"> </script>
+  <script>
+    // window.onload=function(){
+      function autoPlayMusic() {
+          function musicInWeixinHandler() {
+              musicPlay(true);
+              document.addEventListener("WeixinJSBridgeReady", function () {
+                  musicPlay(true);
+              }, false);
+              document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+          }
+          document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+      }
+      function musicPlay(isPlay) {
+          var audio = document.getElementById('musicid');
+          if (isPlay && audio.paused) {
+              audio.play();
+              // audio.loop='loop'
+          }
+          if (!isPlay && !audio.paused) {
+              audio.pause();
+          }
+      }
+      autoPlayMusic();   
+    // };
+
+  </script>
+  <script src="js/index1.js"></script>
+</body>
+
+</html>

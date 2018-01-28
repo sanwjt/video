@@ -1,0 +1,489 @@
+*{margin:0;padding:0;}
+body{
+    overflow: hidden;
+}
+audio{display: none;}
+.ring_call{position: absolute;top:0;left: 0;bottom:0;right:0;width: 100%;height:100%;display: none }
+/*场景1*/
+.ring_call .bg{position: absolute;left: 0;right: 0;top: 0;bottom: 0;
+    height: 100%;width: 100%;}
+.ringPage1{display: none;background: #232223}
+.ringPage1 .bossName{
+    position: absolute;
+    left: 50%;
+    margin-left: -3.5rem;
+    width: 7rem;
+    height: 4.6rem;
+    top: 2rem;
+}
+
+
+.videoBox{
+    display: none
+}
+
+.bg1{position: absolute;top:0;left: 0;bottom:0;right:0;width: 100%;height:100%;}
+
+.ringPage1 .rejectTel{
+    position: absolute;
+    width: 4.1875rem;
+    height: 9.9375rem;
+    left: 18.67%;
+    bottom:4.0625rem;
+}
+
+.ringPage1 .acceptTel{
+    position: absolute;
+    width: 4.1875rem;
+    height: 9.9375rem;
+    right: 18.67%;
+    bottom:4.0625rem;
+}
+/*场景2*/
+.ringPage2 .bg21{
+    position:absolute;
+    width:95% ;
+    left: 50%;
+    margin-left: -47.5%;
+    display: none;
+    top:9.75rem;
+}
+.ringPage2 .time{
+    height:9.75rem;
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    font-size: 5.5rem;
+    font-family: PingFangSC-Ultralight, sans-serif;
+}
+.ringPage2 .time .clock{
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 0.8125rem;
+}
+.ringPage2 .time .clock span{
+    float: left;
+}
+.ringPage2 .time .clock span.timecen{
+    line-height: 4rem;
+}
+
+.ringPage2 .time .monthweekDay{
+    font-size: 1rem;
+    margin-top: -2rem;
+    font-family: PingFangSC-Ultralight, sans-serif;
+}
+.ringPage2 .clock{
+    line-height: 5.5rem;
+    overflow: hidden;
+}
+.ringPage2 .nextPage{
+    display: none;
+    opacity: 1;
+    color: #fff;
+    font-family: PingFangSC-Medium, sans-serif;
+    position: absolute;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+    bottom: 1.8125rem;
+    -webkit-background-clip: text;    /*按文字裁剪*/
+    -webkit-text-fill-color: transparent;    /*文字的颜色使用背景色*/
+
+    /*background-color:#19385c;    !*设置一个背景色*!*/
+    background-image: -webkit-linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 30%, #fff 50%, rgba(0, 0, 0, 0.6) 70%);        /*设置渐变的背景，按对角线渐变*/
+
+    background-blend-mode: hard-light;    /*设置背景为混合模式下的强光模式*/
+    background-size: 200%;
+
+    -webkit-animation: shine 2s infinite;    /*给背景添加动画改变位置*/
+}
+
+@-webkit-keyframes shine {
+    from {background-position: 100%;}
+    to {background-position: 0;}
+}
+
+/*热聊窗口*/
+.ringPage3{
+    background: #f0f0f0;
+    opacity: 0;
+
+}
+.ringPage3 .comImg{
+    width: 100%;
+    position: absolute;
+
+}
+.ringPage3  .hot_head{
+    top: 0;
+}
+.ringPage3  .hot-foot{
+    bottom: 0;
+}
+.ringPage3  .chatBox{
+    position: absolute;
+    width: 100%;
+    top:3.65625rem;
+    height: 14.0625rem;
+}
+.ringPage3  .chatBox img{
+    /*display: none;*/
+    height: 2.3125rem;
+    position:absolute;
+    left: 0.5625rem;
+    opacity: 0;
+}
+
+.ringPage3  .chatBox img.chatfirst{
+    top: 6.125rem;
+}
+.ringPage3  .chatBox img.chatsecond{
+    top: 10rem;
+}
+.ringPage3  .chatBox img.chatsthird{
+    top: 13.0625rem;
+}
+
+.write_delete{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.heart_os{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11111;
+    background: rgba(96,96,96,.6);
+}
+
+.heart_os div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow:hidden;
+    /*visibility: hidden;*/
+}
+
+/*内心戏1*/
+.os1 img{
+    position: absolute;
+    width: 100%;
+}
+.os1 img.os11{
+    width: 96%;
+    left: 50%;
+    margin-left: -48%;
+    bottom: -1.5rem;
+}
+.os1 img.os12{
+    top: 0;
+    opacity: 0;
+}
+
+/*内心戏2*/
+.os2 img{
+    position: absolute;
+    width: 100%;
+}
+.os2 img.os21{
+    width: 96%;
+    left: 50%;
+    margin-left: -48%;
+    bottom: -1.5rem;
+    opacity: 0;
+}
+.os2 img.os22{
+    top: 0;
+    opacity: 0;
+}
+
+/*内心戏3*/
+.os3 img{
+    position: absolute;
+    width: 100%;
+}
+.os3 img.os31{
+    width: 96%;
+    left: 50%;
+    margin-left: -48%;
+    bottom: -3rem;
+    opacity: 0;
+}
+.os3 img.os32{
+    top: 1.5rem;
+    opacity: 0;
+}
+/*内心戏4*/
+.os4 img{
+    position: absolute;
+    width: 100%;
+}
+.os4 img.os41{
+    width: 96%;
+    right: -3rem;
+    /*margin-left: -48%;*/
+    bottom: -3rem;
+    opacity: 0;
+}
+.os4 img.os42{
+    top: 1.5rem;
+    opacity: 0;
+}
+
+/*内心戏5*/
+.os5 {
+    position: absolute;
+    overflow: hidden;
+
+}
+.os5i {
+    opacity: 0;
+}
+.os5 img.os51{
+    position: absolute;
+    width: 77.333%;
+    z-index: 11;
+    opacity: 0;
+}
+
+.os5 img.os52{
+    position: absolute;
+    left: -60%;
+    right: 0;
+    top: -12%;
+    bottom:0;
+    /*width: 100%;*/
+    height: 128%;
+    opacity: 0;
+}
+.os5 img.os53{
+    width: 9.53125rem;
+    bottom: 2.3rem;
+    opacity:0;
+    position: fixed;
+    left: 110%;
+    animation: danmua 3.8s linear infinite;
+}
+.os5 img.os54{
+    width: 7.375rem;
+    bottom: 4.75rem;
+    opacity:0;
+    position: fixed;
+    left: 100%;
+    animation: danmub 4s linear infinite;
+}
+.os5 img.os54{
+    width: 6.375rem;
+    bottom: 4.75rem;
+    opacity:0;
+    position: fixed;
+    left: 120%;
+    animation: danmuc 3s linear infinite;
+}
+.os5 img.os55{
+    width: 6.125rem;
+    top: 8.8rem;
+    opacity:0;
+    position: fixed;
+    left: 130%;
+    animation: danmud 3.7s linear infinite;
+}
+.os5 img.os56{
+    width: 5.375rem;
+    top: 8.625rem;
+    opacity:0;
+    position: fixed;
+    left: 125%;
+    animation: danmue 3.2s linear infinite;
+}
+.os5 img.os57{
+    width: 7.4375rem;
+    top: 4.9rem;
+    opacity:0;
+    position: fixed;
+    left: 115%;
+    animation: danmuf 3.6s linear infinite;
+}
+
+.os5 img.os58{
+    width:9.4375rem;
+    top: 2.5rem;
+    opacity:0;
+    position: fixed;
+    left: 110%;
+    animation: danmua 3.4s linear infinite;
+
+}
+
+@keyframes danmua {
+    from {
+        left: 100%;
+        transform: translateX(0);
+    }
+    to {
+        left: 0;
+        transform: translateX(-100%);
+    }
+}
+@keyframes danmub {
+    from {
+        left: 120%;
+        transform: translateX(0);
+    }
+    to {
+        left: 0;
+        transform: translateX(-120%);
+    }
+}
+@keyframes danmuc {
+    from {
+        left: 125%;
+        transform: translateX(0);
+    }
+    to {
+        left: 0;
+        transform: translateX(-125%);
+
+    }
+}
+
+@keyframes danmud {
+    from {
+        left: 125%;
+        transform: translateX(0);
+    }
+    to {
+        left: 0;
+        transform: translateX(-125%);
+
+    }
+}
+
+@keyframes danmue {
+    from {
+        left: 115%;
+        transform: translateX(0);
+    }
+    to {
+        left: 0;
+        transform: translateX(-115%);
+
+    }
+}
+@keyframes danmuf {
+    from {
+        left: 123%;
+        transform: translateX(0);
+    }
+    to {
+        left: 0;
+        transform: translateX(-123%);
+
+    }
+}
+/*内心戏6*/
+.os6 img{
+    position: absolute;
+    width: 100%;
+}
+.os6 img.os61{
+    width: 96%;
+    left: 50%;
+    margin-left: -48%;
+    bottom: 0;
+    opacity: 0;
+}
+.os6 img.os62{
+    top: 1.5rem;
+    opacity: 0;
+}
+
+/*光标样式*/
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 1; /*初始状态 透明度为0*/
+    }
+    50% {
+        opacity: 0; /*中间状态 透明度为0*/
+    }
+    100% {
+        opacity: 1; /*结尾状态 透明度为1*/
+    }
+}
+#divTyping {
+    position: absolute;
+    left: 2.8125rem;
+    top:0.6rem ;
+    width: 80%;
+    height: 1rem;
+}
+#divTyping span{
+    -webkit-animation:fadeIn .8s infinite linear ;
+    font-weight: bold;
+    color: blue;
+    font-size: 1.4rem;
+    display: inline-block;
+    height: 1rem;
+}
+
+.year-box{list-style: none;text-align: center;padding:0.87rem 0 0.46rem;}
+.year-box li{display:inline-block;width: 7.37rem;height: 3.12rem;line-height:3.12rem;font-size:1rem;border-radius: 3px;background: #ffffff;text-align: center;margin-bottom: 0.46rem;box-shadow: 0px 2px 0px #888888;}
+.keyborde{position: absolute;bottom: 0;width: 100%;height: 15.3rem;left:0;background: url("../images/voice-bar.png") no-repeat #d1d5da;background-size:100%;padding-top:  2.68rem}
+.sent-btn{display:block;margin:0 auto;text-align:center;width: 10.84rem;height: 3.12rem;line-height:3.12rem;background: #abb3bd;color:#70747b;font-size: 1rem;border-radius: 3px;text-decoration: none;}
+/*                                                                                                                                                                                                                                                                                                                                                                                                             .voice_bar{width: 100%;height: 2.68rem;background: url(../images/voice-bar.png) no-repeat;background-size:100% 100%;position: absolute;top: 0;}*/
+.voice_bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2.68rem;
+    line-height: 2.68rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 2.8125rem;
+    font-style: 0.875rem;
+    color: #000;
+}
+.sent-btn.active{
+    color: #fff;
+    background: #78a524;
+}
+
+.bgroute {
+    animation: rotate 20s infinite linear;
+}
+
+@-webkit-keyframes rotate{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+/*分享*/
+.share{position: absolute;top:0;left: 0;bottom:0;right:0;width: 100%;height:100%;}
+.share img{position: absolute;top:0;left: 0;bottom:0;right:0;width: 100%;height:100%;}
+
+/*遮罩分享*/
+.fixed{position: absolute;top: 0;left: 0;right: 0;bottom: 0;width: 100%;height: 100%;z-index: 11111;background: rgba(0,0,0,.6);display: none;}
+.share_friend{position: absolute;top:2rem;right: 1rem;width: 17.65rem;height:9.4rem;}
+
+.sharelu{
+    position: absolute;
+    height: 100%;
+    opacity: 0;
+}
+.shareicon{
+    position: absolute;
+    height: 84%;
+    right: 0;
+    opacity: 1
+}

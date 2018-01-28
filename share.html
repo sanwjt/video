@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>老板在群里@了你</title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <div class="share">
+    <img src="" alt="">
+  </div>
+  <div class="fixed">
+      <div class="share_friend">
+         <img class="sharelu animated" src="images/share-deer.png" alt="">
+         <img class="shareicon" src="images/share-ctn.png" alt="">
+         <!-- <img src="images/share-firend.png" alt=""> -->
+      </div>
+  </div>
+  <script src="js/jquery-3.2.1.min.js"> </script>
+  <script type="text/javascript" src="js/share.js?v=20170405" source="widget"></script>
+  <script>
+   $(function () {
+          function getUrlParam(name) {
+              var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+              var r = window.location.search.substr(1).match(reg); //匹配目标参数
+              if (r != null) return unescape(r[2]); return null; //返回参数值
+          }
+
+          var selectIndex  =  parseFloat(getUrlParam('select'));
+
+          $('.share img').attr({"src":"images/share-"+(selectIndex+1)+".jpg"});
+                  window.wxShare = {
+                // 分享标题
+                title: '老板在群里@了你老板在群里@了你',
+                // 分享描述
+                desc:'留学需要注意的那些事，全都在这了！',
+                // 分享链接
+                link: window.location.href,
+                // 分享icon
+                imgUrl:'http://src.leju.com/imp/imp/deal/00/21/5/ee4a727100b185eff16091e99be_p44_mk43_cm40X40_wm232.jpg'
+            }
+
+          weixinApi.share.init(wxShare);
+      })
+      // 几秒之后遮罩出现，点击遮罩，分享消失
+      var timer=setTimeout(function(){
+        clearTimeout(timer);
+        $(".fixed").show();
+        $('.sharelu').addClass('bounceIn').css({"opacity":1});
+
+         var timer1=setTimeout(function(){
+          clearTimeout(timer1);
+          $('.sharelu').removeClass("bounceIn").addClass('rubberBand');
+         },1400)
+      },2000)
+
+      $('.share').on('click',function(){
+         $(".fixed").show();
+          $('.sharelu').addClass('bounceIn').css({"opacity":1});
+
+           var timer1=setTimeout(function(){
+            clearTimeout(timer1);
+            $('.sharelu').removeClass("bounceIn").addClass('rubberBand');
+           },1400)
+      })
+
+      $(".fixed").click(function() {
+        $(".fixed").hide();
+      });
+  </script>
+
+</body>
+
+</html>
