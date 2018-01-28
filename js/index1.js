@@ -38,7 +38,7 @@ window.onload=function(){
         btn.style.display = "block";
     })
 
-<<<<<<< HEAD
+
     // videoALL.addEventListener("ended",function(){
       $('#videoALL').on('ended',function () {
           videoALL.pause();
@@ -46,7 +46,7 @@ window.onload=function(){
           // videoend.style.display = "block";
           setTimeout(function () {
               $('.voice_bar').addClass('flash');
-          },1000)
+          },1000);
           // $('.ringPage3').show();
 
           $('.chat').show().css({"opacity":1,"visibility":"visible"});
@@ -56,7 +56,6 @@ window.onload=function(){
       })
 
     // });
-=======
     videoALL.addEventListener("ended",function(){
         videoALL.pause();
         // videobox.style.display = "none";
@@ -99,7 +98,6 @@ window.onload=function(){
         $('.chat').show();
         // $('.keyborde').addClass('fadeInUp').css({"opacity":1})
     });
->>>>>>> 785b6c8ee3427db0332b0577bae68396d05dc24a
 
 
     //首页铃声
