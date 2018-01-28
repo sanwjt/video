@@ -38,20 +38,23 @@ window.onload=function(){
         btn.style.display = "block";
     })
 
-    videoALL.addEventListener("ended",function(){
-        videoALL.pause();
-        // videobox.style.display = "none";
-        // videoend.style.display = "block";
-        setTimeout(function () {
-            $('.voice_bar').addClass('flash');
-        },1000)
-        $('.ringPage3').show();
+    // videoALL.addEventListener("ended",function(){
+      $('#videoALL').on('ended',function () {
+          videoALL.pause();
+          // videobox.style.display = "none";
+          // videoend.style.display = "block";
+          setTimeout(function () {
+              $('.voice_bar').addClass('flash');
+          },1000)
+          // $('.ringPage3').show();
 
-        $('.chat').show().css({"opacity":1,"visibility":visible});
-        $('.keyborde').show().css({"opacity":1,"visibility":visible});
+          $('.chat').show().css({"opacity":1,"visibility":"visible"});
+          $('.keyborde').show().css({"opacity":1,"visibility":"visible"});
 
-        $('.keyborde').addClass('fadeInUp');
-    });
+          $('.keyborde').addClass('fadeInUp');
+      })
+
+    // });
 
 
     //首页铃声
