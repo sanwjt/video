@@ -39,24 +39,45 @@ window.onload=function(){
     })
 
 
-    // videoALL.addEventListener("ended",function(){
-      $('#videoALL').on('ended',function () {
-          videoALL.pause();
-          // videobox.style.display = "none";
-          // videoend.style.display = "block";
-          setTimeout(function () {
-              $('.voice_bar').addClass('flash');
-          },1000);
-          // $('.ringPage3').show();
 
-          $('.chat').show().css({"opacity":1,"visibility":"visible"});
-          $('.keyborde').show().css({"opacity":1,"visibility":"visible"});
+      // $('#videoALL').on('ended',function () {
+      //     // videoALL.pause();
+      //     // setTimeout(function () {
+      //     //     $('.voice_bar').addClass('flash');
+      //     // },1000);
+      //     // // $('.ringPage3').show();
 
-          $('.keyborde').addClass('fadeInUp');
-      })
+      //     // $('.chat').show().css({"opacity":1,"visibility":"visible"});
+      //     // $('.keyborde').show().css({"opacity":1,"visibility":"visible"});
 
-    // });
+      //     // $('.keyborde').addClass('fadeInUp');
+      // })
 
+     $('#videoALL').on("play", function () {
+            setTimeout(function(){
+                setEnd();
+            },300)
+        })
+
+        function setEnd(){
+           var videoEnd = 0;
+             $('#videoALL').on("ended", function () {
+                if (!videoEnd) {
+                    $(".p4").show();
+                    $('#videoALL')[0].pause();
+                    if(isAndroid){
+                        $(".p3").hide();
+                        $('.keyborde').addClass('fadeInUp');
+                    }else{
+                        setTimeout(function(){
+                            $(".p3").hide();
+                            $('.keyborde').addClass('fadeInUp');
+                        },100);
+                    }
+                    videoEnd = 1;
+                }
+            });
+        }
 
 
     //首页铃声
