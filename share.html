@@ -28,10 +28,35 @@
               if (r != null) return unescape(r[2]); return null; //返回参数值
           }
 
-          var selectIndex  =  parseFloat(getUrlParam('select'));
+          var selectIndex  =  parseFloat(getUrlParam('select'))+1;
 
-          $('.share img').attr({"src":"images/share-"+(selectIndex+1)+".jpg"});
-                  window.wxShare = {
+          var src = ''
+
+          if(selectIndex==1){
+             src = '第1张图片的图片地址';
+          }else{
+             src = '第2张图片的图片地址';
+          }else{
+             src = '第3张图片的图片地址';
+          }else{
+             src = '第4张图片的图片地址';
+          }else{
+             src = '第5张图片的图片地址';
+          }else{
+             src = '第6张图片的图片地址';
+          }else{
+             src = '第7张图片的图片地址';
+          }else{
+             src = '第8张图片的图片地址';
+          }else{
+             src = '第9张图片的图片地址';
+          }
+
+          $('.share img').attr({"src":src});
+
+
+
+            window.wxShare = {
                 // 分享标题
                 title: '老板在群里@了你老板在群里@了你',
                 // 分享描述

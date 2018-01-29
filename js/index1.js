@@ -22,13 +22,22 @@ window.onload=function(){
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 
+    var videoAndroidInit = 0;
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+
     function playcontr(){
+        $('.ringPage2').hide();
         if (isAndroid) {
             videoALL.style.width = window.screen.width + 'px';
             videoALL.style.height = window.screen.height + 'px';
         }
+        if (!videoAndroidInit) {
+                videoALL.play();
+                videoAndroidInit = 1;
+        }
+        
         videobox.style.display = "block";
-        videoALL.play();
         btn.style.display = "none";
         videoend.style.display = "none";
     };
@@ -157,10 +166,10 @@ window.onload=function(){
 
     $('.ringPage2').on('click',function(){
         $('#videobox').addClass('fadeIn');
-        playcontr()
+         playcontr()
          audio2.pause();
          audio3.play();
-         $('.ringPage2').hide();
+         // $('.ringPage2').hide();
          $('.videoBox').show();
          // $('#media')[0].play();
 
