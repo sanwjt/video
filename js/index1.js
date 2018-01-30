@@ -27,12 +27,13 @@ window.onload=function(){
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
 
     function playcontr(){
-        $('.ringPage2').hide();
+
         if (isAndroid) {
             videoALL.style.width = window.screen.width + 'px';
             videoALL.style.height = window.screen.height + 'px';
         }
         if (!videoAndroidInit) {
+                $('.ringPage2').hide();
                 videoALL.play();
                 videoAndroidInit = 1;
         }
