@@ -33,7 +33,9 @@ window.onload=function(){
             videoALL.style.height = window.screen.height + 'px';
         }
         if (!videoAndroidInit) {
-                $('.ringPage2').hide();
+               setTimeout(function () {
+                   $('.ringPage2').hide();
+               },400)
                 videoALL.play();
                 videoAndroidInit = 1;
         }
