@@ -35,7 +35,7 @@ window.onload=function(){
         if (!videoAndroidInit) {
                setTimeout(function () {
                    $('.ringPage2').hide();
-               },400)
+               },1000)
                 videoALL.play();
                 videoAndroidInit = 1;
         }
