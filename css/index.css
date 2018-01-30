@@ -534,6 +534,7 @@ video{
     right: 0;
     bottom: 0;
     background: #000;
+    z-index: 111;
 }
 
 .loading_page img{

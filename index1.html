@@ -94,24 +94,11 @@
      <img src="images/loading.png" alt="">
      <span></span>
   </div>
-
-  <script src="http://static.iqiyi.com/js/marketing/53e9c2e19e3d416e9342ffdd2ff87af2.js"></script>
   <script src="http://static.iqiyi.com/js/marketing/66a37278b1e84e21a1e103a98d6e3972.js"></script>
   <script src="http://static.iqiyi.com/js/marketing/6754bd8818374e4f9bf67cde013cf767.js"></script>
   <script src="http://static.iqiyi.com/js/marketing/bdfb38184c4f49fa9e964cd71aa547bf.js"></script>
-    <script src="js/jquery-3.2.1.min.js"> </script>
+  <script src="js/jquery-3.2.1.min.js"> </script>
   <script>
-     var  arr = {
-          "bg2" : "images/bg2.png",
-          "bg1" : "images/bg1.jpg",
-          "bg21": "images/bg2-1.png",
-          "chatbg" : "images/chatbg.jpg"
-     }
-     //
-     var m = new Management(arr);
-  </script>
-  <script>
-    // window.onload=function(){
       function autoPlayMusic() {
           function musicInWeixinHandler() {
               musicPlay(true);
@@ -132,9 +119,67 @@
               audio.pause();
           }
       }
-      autoPlayMusic();   
-    // };
 
+      function Management(R_URL){
+          //DOM
+          this.$dom = $(".loading_page");
+          //资源清单地址
+          this.R_URL = R_URL;
+          //资源对象
+          this.R_obj = new Object();
+          //loading条
+          this.$loading = $(".loading span");
+          //轮播图
+          this.fingerh5 = null;
+          //加载资源
+          this.loadResoure();
+      }
+      //加载资源
+      Management.prototype.loadResoure = function(){
+          var self = this;
+          //发出请求
+          //转为对象
+          var dataobj = this.R_URL;
+          console.log(dataobj)
+          //计数
+          var count = 0;
+          var amount = _.size(dataobj);
+
+          //制作自己的资源对象
+          for (var k in dataobj) {
+              //创建相同的key，也就是说dataobj对象和R_obj对象是有相同的key的。它的值不是字符串了，不是路径了，而是孤儿节点了。
+              self.R_obj[k] = new Image();
+              //一旦设置src，HTTP上行请求将发出
+              self.R_obj[k].src = dataobj[k];
+              //监听它的load
+              self.R_obj[k].onload = function () {
+                  //某一张图片加载完成
+                  count++;
+                  if (count == amount) {
+                      //开始
+                      self.$dom.hide();
+                      autoPlayMusic();
+                      setInn()
+                      // //实例化FingerH5类
+                      // self.fingerh5 = new FingerH5();
+                      $("img[data-name]").each(function(){
+                          //替换节点，替换之前要设置class属性
+                          $(this).replaceWith($(m.R_obj[$(this).attr("data-name")]).attr("class",$(this).attr("class")));
+                      });
+
+                  }
+              };
+          }
+      }
+
+     var  arr = {
+          "bg2" : "images/bg2.png",
+          "bg1" : "images/bg1.jpg",
+          "bg21": "images/bg2-1.png",
+          "chatbg" : "images/chatbg.jpg"
+     }
+     //
+     var m = new Management(arr);
   </script>
   <script src="js/index1.js"></script>
 </body>
